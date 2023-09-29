@@ -9,12 +9,12 @@ $mimirCompany = $helper->getConfigModule('general/mimir_company');
         mimirStyle = document.createElement('link')
         mimirStyle.rel = "stylesheet"
         mimirStyle.type = "text/css"
-        mimirStyle.href = `https://cdn.jsdelivr.net/gh/Jakkaps/mimir_chat_bubble@${$mimirCompany}/mimir.css`
+        mimirStyle.href = `https://cdn.jsdelivr.net/gh/CognitionHub/mimir_chat_bubble@${$mimirCompany}/public/mimir.css`
         document.getElementsByTagName('head')[0].appendChild(mimirStyle)
 
         mimirScript = document.createElement('script')
         mimirScript.type = "text/javascript"
-        mimirScript.src = `https://cdn.jsdelivr.net/gh/Jakkaps/mimir_chat_bubble@${$mimirCompany}/mimir.js`
+        mimirScript.src = `https://cdn.jsdelivr.net/gh/CognitionHub/mimir_chat_bubble@${$mimirCompany}/public/mimir.js`
         document.getElementsByTagName('head')[0].appendChild(mimirScript)
     });
 </script>
