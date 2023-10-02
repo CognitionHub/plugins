@@ -10,3 +10,6 @@ This is a Magento module for CognitionHub's Mimir chatbot.
 php bin/magento cache:flush
 php bin/magento setup:upgrade
 ```
+
+## Configuration
+For the chatbot to work correctly, you need to provide it with the name of your company. To do so, specify the company name in the admin panel under `Stores > Configuration > CognitionHub > Mimir Chatbot > Company`. 
