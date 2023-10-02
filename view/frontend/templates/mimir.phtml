@@ -1,10 +1,12 @@
 <?php
 $helper = $this->helper('CognitionHub\Mimir\Helper\Data');
 $mimirCompany = $helper->getConfigModule('general/mimir_company');
+$customerId = $this->getCustomerId();
 ?>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
         window.$mimirCompany = "<?php echo $mimirCompany ?>"
+        window.$mimirCustomerID = "<?php echo $customerId ?>"
 
         mimirStyle = document.createElement('link')
         mimirStyle.rel = "stylesheet"
