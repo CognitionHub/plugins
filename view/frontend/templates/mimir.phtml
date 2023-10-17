@@ -1,22 +1,26 @@
 <?php
 $helper = $this->helper('CognitionHub\Mimir\Helper\Data');
 $mimirCompany = $helper->getConfigModule('general/mimir_company');
-$customerId = $this->getCustomerId();
 ?>
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
-        window.$mimirCompany = "<?php echo $mimirCompany ?>"
-        window.$mimirCustomerID = "<?php echo $customerId ?>"
+        fetch('/mimir/session/getSessionId')
+        .then(response => response.json())
+        .then(data => {
+            window.$mimirCompany = "<?php echo $mimirCompany ?>"
+            window.$mimirCustomerID = data.mimir_customer_id
 
-        mimirStyle = document.createElement('link')
-        mimirStyle.rel = "stylesheet"
-        mimirStyle.type = "text/css"
-        mimirStyle.href = `https://cdn.jsdelivr.net/gh/CognitionHub/mimir_chat_bubble@${$mimirCompany}/public/mimir.css`
-        document.getElementsByTagName('head')[0].appendChild(mimirStyle)
+            mimirStyle = document.createElement('link')
+            mimirStyle.rel = "stylesheet"
+            mimirStyle.type = "text/css"
+            mimirStyle.href = `https://cdn.jsdelivr.net/gh/CognitionHub/mimir_chat_bubble@${$mimirCompany}/public/mimir.css`
+            document.getElementsByTagName('head')[0].appendChild(mimirStyle)
 
-        mimirScript = document.createElement('script')
-        mimirScript.type = "text/javascript"
-        mimirScript.src = `https://cdn.jsdelivr.net/gh/CognitionHub/mimir_chat_bubble@${$mimirCompany}/public/mimir.js`
-        document.getElementsByTagName('head')[0].appendChild(mimirScript)
+            mimirScript = document.createElement('script')
+            mimirScript.type = "text/javascript"
+            mimirScript.src = `https://cdn.jsdelivr.net/gh/CognitionHub/mimir_chat_bubble@${$mimirCompany}/public/mimir.js`
+            document.getElementsByTagName('head')[0].appendChild(mimirScript)
+        });
+       
     });
 </script>
