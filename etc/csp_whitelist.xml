@@ -9,6 +9,7 @@
         <policy id="connect-src">
             <values>
                 <value id="mimir" type="host">use.fontawesome.com</value>
+                <value id="cognitionhub_azure_websocket" type="host">wss://cognition-hub-backend.azurewebsites.net</value>
             </values>
         </policy>
         <policy id="img-src">
